@@ -1,4 +1,4 @@
-module database "database" {
+module "database" {
   source = "./modules/components"
   for_each = var.databases
   component = each.key
@@ -10,8 +10,8 @@ module database "database" {
 
 }
 
-module apps "apps" {
-  depends_on = [module.databases]
+module "apps" {
+  depends_on = [module.database]
   source = "./modules/components"
   for_each = var.apps
   component = each.key

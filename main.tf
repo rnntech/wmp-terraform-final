@@ -4,7 +4,7 @@ module "database" {
   component = each.key
   env=var.env
   dns_domain = var.dns_domain
-  port = each.value.ports
+  ports = each.value.ports
   instance_type = each.value.instance_type
 
 
@@ -17,7 +17,7 @@ module "apps" {
   component = each.key
   env=var.env
   dns_domain = var.dns_domain
-  port = each.value.ports
+  ports = each.value.ports
   instance_type = each.value.instance_type
 
 
